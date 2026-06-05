@@ -4,167 +4,197 @@ import Image from "next/image";
 const projects = [
   {
     num: "01",
-    title: "Personal Portfolio",
-    desc: "Responsive portfolio with pixel-perfect UI from Figma. Admin dashboard with CRUD, reusable components, optimised for all devices.",
-    stack: ["Next.js","TypeScript","Tailwind"],
-    live: "https://bavithran.dev",
-    github: null,
-    thumb: "/thumbnails/portfolio.png",   // drop your image here
-    size: "large",  // spans 2 cols
+    title: "AI Research Copilot",
+    desc: "AI-powered research assistant that helps gather, analyze, and organize information through intelligent automation.",
+    stack: ["Python", "AI", "LLMs"],
+    live: null,
+    github: "https://github.com/Bavi2002/Research-Copilot",
+    thumb: "/thumbnails/1.png",
     accent: "#C8F135",
   },
   {
     num: "02",
-    title: "Sivaraam Clinic System",
-    desc: "Full clinic platform — appointment booking, role-based auth, admin panel, smooth polished interactions.",
-    stack: ["Next.js","Tailwind","NextAuth"],
-    live: "https://sivaraam-clinic.vercel.app",
-    github: null,
-    thumb: "/thumbnails/clinic.png",
-    size: "normal",
+    title: "Multi-Agent Coding Assistant",
+    desc: "Autonomous AI system that coordinates multiple agents to solve coding and reasoning tasks.",
+    stack: ["Python", "OpenAI", "AI Agents"],
+    live: null,
+    github: "https://github.com/Bavi2002/Tiny-Multi-Agent-Coding-Assistant",
+    thumb: "/thumbnails/1.png",
     accent: "#B3E5FC",
   },
   {
     num: "03",
-    title: "Style Craft E-commerce",
-    desc: "MERN-stack store with product listing, cart, checkout, auth, and payment workflows.",
-    stack: ["React","Express","MongoDB","Node.js"],
-    live: null,
-    github: null,
-    thumb: "/thumbnails/ecommerce.png",
-    size: "normal",
+    title: "Clinic Management System",
+    desc: "Full-stack healthcare platform with appointments, patient management, and admin workflows.",
+    stack: ["Next.js", "TypeScript", "MongoDB"],
+    live: "https://sivaraam-clinic.vercel.app",
+    github: "https://github.com/Bavi2002/Sivaraam-Clinic",
+    thumb: "/thumbnails/1.png",
     accent: "#FFE0B2",
   },
   {
     num: "04",
-    title: "Event Management (Microservices)",
-    desc: "Microservices event platform with API Gateway, Booking Service APIs, and React + Tailwind frontend.",
-    stack: ["React","Node.js","Docker","API Gateway"],
+    title: "Smart Event Platform",
+    desc: "Microservices-based event system with API Gateway and scalable backend architecture.",
+    stack: ["Node.js", "Microservices", "Docker"],
     live: null,
-    github: null,
-    thumb: "/thumbnails/events.png",
-    size: "normal",
+    github: "https://github.com/Bavi2002/smart-event-registration-service",
+    thumb: "/thumbnails/1.png",
     accent: "#E1BEE7",
   },
   {
     num: "05",
-    title: "Vehicle Rental Booking",
-    desc: "Next.js booking platform with Firebase Auth, Firestore real-time data, AWS Lambda & Amplify.",
-    stack: ["Next.js","TypeScript","Firebase","AWS"],
+    title: "Vehicle Rental Platform",
+    desc: "Cloud-enabled booking system with authentication and AWS/Firebase integration.",
+    stack: ["Next.js", "Firebase", "AWS"],
     live: null,
-    github: null,
-    thumb: "/thumbnails/vehicle.png",
-    size: "normal",
+    github: "https://github.com/Bavi2002/Vehicle-Rental",
+    thumb: "/thumbnails/1.png",
     accent: "#C8E6C9",
+  },
+  {
+    num: "06",
+    title: "Serverless Backend APIs",
+    desc: "AWS Lambda-based backend services for scalable and event-driven execution.",
+    stack: ["AWS Lambda", "TypeScript", "Serverless"],
+    live: null,
+    github: "https://github.com/Bavi2002/AWS-Lambda",
+    thumb: "/thumbnails/1.png",
+    accent: "#FFD180",
   },
 ];
 
 function PlaceholderThumb({ accent, num }: { accent: string; num: string }) {
   return (
-    <div className="w-full h-full flex items-center justify-center relative overflow-hidden"
-      style={{ background: `linear-gradient(135deg, ${accent}40 0%, ${accent}15 100%)` }}>
-      <span className="font-sans font-bold opacity-10 select-none"
-        style={{ fontSize: "clamp(5rem,15vw,10rem)", letterSpacing:"-0.08em", color:"#000" }}>
+    <div
+      className="w-full h-full flex items-center justify-center relative overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, ${accent}40 0%, ${accent}15 100%)`,
+      }}
+    >
+      <span
+        className="font-sans font-bold opacity-10 select-none"
+        style={{
+          fontSize: "clamp(5rem,15vw,10rem)",
+          letterSpacing: "-0.08em",
+          color: "#000",
+        }}
+      >
         {num}
       </span>
     </div>
   );
 }
 
-function ProjectCard({ p, featured = false }: { p: typeof projects[0]; featured?: boolean }) {
+function ProjectCard({ p }: any) {
   return (
-    <div className={`proj-card group flex flex-col ${featured ? "lg:flex-row" : ""}`}>
-      {/* Thumbnail */}
-      <div className={`proj-thumb ${featured ? "lg:w-1/2 aspect-video lg:aspect-auto" : ""}`}>
-        <Image
-          src={p.thumb}
-          alt={p.title}
-          fill
-          style={{ objectFit: "cover" }}
-          unoptimized
-        />
-        {/* Fallback overlay always behind image */}
-        <div className="absolute inset-0">
-          <PlaceholderThumb accent={p.accent} num={p.num} />
-        </div>
-      </div>
+    <div className="group relative rounded-2xl p-[1px] transition-all duration-300 hover:scale-[1.02]">
 
-      {/* Content */}
-      <div className={`p-6 flex flex-col gap-4 ${featured ? "lg:w-1/2 lg:p-8" : ""}`}>
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <span className="font-mono text-xs text-muted mb-1 block">{p.num}</span>
-            <h3 className="font-sans font-bold text-xl text-ink" style={{ letterSpacing: "-0.03em" }}>
-              {p.title}
-            </h3>
-          </div>
+      {/* Gradient border */}
+      <div
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"
+        style={{
+          background: `linear-gradient(135deg, ${p.accent}, transparent 70%)`,
+        }}
+      />
+
+      {/* Inner card */}
+      <div className="relative rounded-2xl bg-white/80 backdrop-blur-xl border border-ink/10 overflow-hidden">
+
+        {/* Top bar */}
+        <div className="flex items-center justify-between px-5 py-3 border-b border-ink/5">
+          <span className="text-xs font-mono text-muted">#{p.num}</span>
+
           <div className="flex gap-2">
             {p.live && (
-              <a href={p.live} target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-ink/15 grid place-items-center hover:bg-lime hover:border-lime transition-all duration-200">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M7 17L17 7M7 7h10v10"/>
-                </svg>
+              <a
+                href={p.live}
+                target="_blank"
+                className="w-7 h-7 grid place-items-center rounded-full border border-ink/10 hover:bg-lime transition"
+              >
+                ↗
               </a>
             )}
             {p.github && (
-              <a href={p.github} target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-ink/15 grid place-items-center hover:bg-ink hover:text-paper hover:border-ink transition-all duration-200">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                </svg>
+              <a
+                href={p.github}
+                target="_blank"
+                className="w-7 h-7 grid place-items-center rounded-full border border-ink/10 hover:bg-ink hover:text-white transition"
+              >
+                ⌘
               </a>
             )}
           </div>
         </div>
 
-        <p className="font-body text-sm text-muted leading-relaxed">{p.desc}</p>
+        {/* Content */}
+        <div className="p-5 flex flex-col gap-3">
 
-        <div className="flex flex-wrap gap-2 mt-auto pt-2">
-          {p.stack.map(t => (
-            <span key={t} className="chip">{t}</span>
-          ))}
+          <h3 className="text-lg font-bold text-ink tracking-tight group-hover:text-black">
+            {p.title}
+          </h3>
+
+          <p className="text-sm text-muted leading-relaxed">
+            {p.desc}
+          </p>
+
+          {/* Stack */}
+          <div className="flex flex-wrap gap-2 pt-2">
+            {p.stack.map((t: string) => (
+              <span
+                key={t}
+                className="text-[11px] px-2 py-1 rounded-full border border-ink/10 bg-white/60 text-ink/70"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
+
+        {/* bottom glow line */}
+        <div
+          className="h-[2px] w-full opacity-40 group-hover:opacity-100 transition"
+          style={{ background: p.accent }}
+        />
       </div>
     </div>
   );
 }
 
 export default function Projects() {
-  const [featured, ...rest] = projects;
+  const rest = projects.slice(0);
 
   return (
-    <section id="projects" className="py-32 px-6">
+    <section id="projects" className="py-32 px-6" style={{background:"var(--warm)"}}>
       <div className="max-w-7xl mx-auto">
 
-        <div className="flex items-end justify-between gap-4 mb-16 sr flex-wrap">
-          <div className="flex items-center gap-4">
-            <span className="section-label">Selected work</span>
-            <div className="h-px w-24 bg-ink/10"/>
+        {/* Header */}
+        <div className=" items-end justify-between gap-4 mb-16 flex-wrap">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="section-label">Projects</span>
+            <div className="h-px w-24 bg-ink/10" />
           </div>
-          <h2 className="font-sans font-bold text-ink" style={{fontSize:"clamp(2rem,4vw,3.5rem)", letterSpacing:"-0.04em"}}>
-            Projects<span className="text-lime">.</span>
+
+          <h2
+            className="font-sans font-bold text-ink"
+            style={{
+              fontSize: "clamp(2rem,4vw,3.5rem)",
+              letterSpacing: "-0.04em",
+            }}
+          >
+            Selected Work<span className="text-lime">.</span>
           </h2>
         </div>
 
-        {/* Featured — wide card */}
-        <div className="sr mb-4">
-          <ProjectCard p={featured} featured />
-        </div>
+     
 
-        {/* Grid of remaining */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-          {rest.map((p, i) => (
-            <div key={p.num} className={`sr d${i+2}`}>
-              <ProjectCard p={p} />
-            </div>
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {rest.map((p) => (
+            <ProjectCard key={p.num} p={p} />
           ))}
         </div>
 
-        {/* Add thumbnail hint */}
-        <p className="sr mt-8 font-mono text-xs text-muted/50 text-center">
-          Drop images into <code className="font-mono">/public/thumbnails/</code> to add project screenshots
-        </p>
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ import Skills      from "@/components/sections/Skills";
 import Contact     from "@/components/sections/Contact";
 import Footer      from "@/components/sections/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import Services from "@/components/sections/Services";
+import Services    from "@/components/sections/Services";
 
 export default function Home() {
   return (

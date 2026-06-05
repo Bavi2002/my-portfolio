@@ -4,8 +4,9 @@ const experiences = [
     role: "Full Stack Developer Intern",
     company: "NothingApps",
     type: "Internship",
-    description: "Built responsive interfaces and landing pages for 3 product sites (nothingapps.io, saaswa.com, botstarterkit.com). Developed OpenAI-powered chat features, integrated WhatsApp Cloud API, and contributed to WhatsBothub using Next.js, TypeScript, Prisma & MongoDB. Participated in agile sprints and AWS Lambda deployments.",
-    stack: ["Next.js","TypeScript","MongoDB","Prisma","AWS Lambda","OpenAI API","WhatsApp API"],
+    description:
+      "Built and shipped web products including landing pages and SaaS sites. Worked on AI chat features, WhatsApp integrations, and backend systems using modern full-stack tools.",
+    stack: ["Next.js", "TypeScript", "MongoDB", "Prisma", "AWS Lambda", "OpenAI API", "WhatsApp API"],
     highlight: true,
   },
   {
@@ -13,15 +14,16 @@ const experiences = [
     role: "Associate Software Engineer",
     company: "Gensoft",
     type: "Full-time",
-    description: "Revamped a legacy Laravel application — refactored backend architecture, improved code structure, and applied modern best practices. Built responsive frontends using Blade & Bootstrap, fixing UI inconsistencies and handling full-stack API integration.",
-    stack: ["Laravel","PHP","Bootstrap","Blade","MySQL","REST APIs"],
+    description:
+      "Modernized a legacy Laravel system by improving backend structure and rebuilding UI components. Focused on performance, usability, and cleaner architecture.",
+    stack: ["Laravel", "PHP", "Bootstrap", "Blade", "MySQL", "REST APIs"],
     highlight: false,
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32 px-6" style={{background:"var(--warm)"}}>
+    <section id="experience" className="py-32 px-6" >
       <div className="max-w-7xl mx-auto">
 
         <div className="flex items-center gap-4 mb-16 sr">

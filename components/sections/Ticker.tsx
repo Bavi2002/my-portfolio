@@ -1,4 +1,4 @@
-const items = ["React.js","Next.js","TypeScript","Tailwind CSS","Node.js","MongoDB","AWS Lambda","Docker","Figma","Prisma","OpenAI API","REST APIs","Git","Vercel","Firebase"];
+const items = ["React.js","Next.js","TypeScript","Python","Tailwind CSS","Node.js","MongoDB","AWS","Docker","Figma","Prisma","OpenAI API","REST APIs","Git","Vercel","Firebase"];
 
 export default function Ticker() {
   const doubled = [...items, ...items];
