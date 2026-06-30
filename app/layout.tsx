@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description: "Building interfaces people love to use.",
     url: "https://bavithran.dev",
   },
+  other: {
+    "google-adsense-account": "ca-pub-5370239646628306",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
